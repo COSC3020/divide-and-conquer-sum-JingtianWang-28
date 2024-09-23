@@ -25,3 +25,18 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+//////
+T(n) = [(1, if n =<1) (3T(n/3)+n, if n >= 1)]
+
+3T(n/3)+n = 3(3T(n/9)+(n/3)+n)
+= 27T(n/27)+3n
+= 3^i(T)(n/3^i)+ in
+
+for i = log3 n
+
+T(n) = 3^(log3 n) * T(1) + nlog3 n 
+
+since 3^(log3 n) = n , T(1) = 1
+
+T(n) = n+nlog_3 n belong to THETA(nlogn)
