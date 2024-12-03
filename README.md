@@ -27,16 +27,22 @@ Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
 //////
-T(n) = [(1, if n =<1) (3T(n/3)+n, if n >= 1)]
+Since there are three recursive calls and the array is split into three
+so T(n) = [(1, if n =<1) (3T(n/3), if n >= 1)]
 
-3T(n/3)+n = 3(3T(n/9)+(n/3)+n)
-= 27T(n/27)+3n
-= 3^i(T)(n/3^i)+ in
+3T(n/3)+c in T(n) 
+T(n) = 3(3Tn/3/3))+c
+= 9T(n/9)3c+c
+= 3(9T)n/9/3)+3c+c
+= 27T(n/27)9c+3c + c
+= 3^i(T)(n/3^i)+ c
 
 for i = log3 n
 
-T(n) = 3^(log3 n) * T(1) + nlog3 n 
+$T(n) = 3^(log3 n)T(n/3^(log3 n)) + c
 
 since 3^(log3 n) = n , T(1) = 1
 
-T(n) = n+nlog_3 n belong to THETA(nlogn)
+T(n) = nT(1)+c
+
+time complexity is theta(n)
