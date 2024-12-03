@@ -25,3 +25,24 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+//////
+Since there are three recursive calls and the array is split into three
+so T(n) = [(1, if n =<1) (3T(n/3), if n >= 1)]
+
+3T(n/3)+c in T(n) 
+T(n) = 3(3Tn/3/3))+c
+= 9T(n/9)3c+c
+= 3(9T)n/9/3)+3c+c
+= 27T(n/27)9c+3c + c
+= 3^i(T)(n/3^i)+ c
+
+for i = log3 n
+
+$T(n) = 3^(log3 n)T(n/3^(log3 n)) + c
+
+since 3^(log3 n) = n , T(1) = 1
+
+T(n) = nT(1)+c
+
+time complexity is theta(n)
